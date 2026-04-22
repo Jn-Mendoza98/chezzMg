@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chez Maggy Pizzeria</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light text-gray-800">
+    <!-- Header -->
+    <header class="bg-darker text-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center lg:hidden">
+                    <button type="button" class="text-white hover:text-primary focus:outline-none focus:text-primary">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center lg:justify-start flex-1 lg:flex-none">
+                    <a href="#" class="flex items-center gap-2">
+                        <!-- Mocking Logo with Text + Icon -->
+                        <div class="text-2xl font-serif italic text-primary font-bold">Chez Maggy</div>
+                        <i class="fas fa-pizza-slice text-yellow-500 text-xl"></i>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden lg:flex space-x-4 xl:space-x-6 text-xs xl:text-sm font-medium items-center uppercase tracking-wide">
+                    <a href="#" class="text-white hover:text-primary transition">Inicio</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition">Entradas</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition">Cremas</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition">Calzone</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition">Pizzas</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition">Pastas</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition">Refrescos</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition">Postres</a>
+                    <a href="#" class="text-gray-300 hover:text-primary transition">Bebidas</a>
+                </nav>
+
+                <!-- Actions (Button + Cart) -->
+                <div class="flex items-center gap-4">
+                    <a href="#" class="hidden lg:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-primary hover:bg-red-700 transition uppercase">
+                        Pedir Ahora
+                    </a>
+                    <button class="relative text-white hover:text-primary transition">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-darker text-white">
+        <!-- Background Image (Mocked with Unsplash) -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Pizza Background" class="w-full h-full object-cover opacity-60">
+            <!-- Gradient Overlay to make text readable, matching the design -->
+            <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-32">
+            <div class="max-w-2xl">
+                <p class="text-primary font-bold tracking-wider uppercase mb-2 text-xs sm:text-base">Bienvenidos a</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold uppercase leading-none mb-4 sm:mb-6">
+                    <span class="block text-white">Pizzeria</span>
+                    <span class="block text-white">Chez Maggy</span>
+                    <span class="block text-primary">Chiclayo</span>
+                </h1>
+                <p class="text-gray-300 text-base sm:text-lg mb-8 max-w-md">
+                    Ingredientes frescos, masa artesanal y el mejor sabor que te hace volver.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-primary hover:bg-red-700 transition w-full sm:w-auto uppercase">
+                        <i class="fas fa-motorcycle mr-2"></i> Pedir Ahora
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-yellow-500 rounded-md shadow-sm text-base font-bold text-yellow-500 bg-transparent hover:bg-yellow-500 hover:text-dark transition w-full sm:w-auto uppercase">
+                        <i class="fas fa-book-open mr-2"></i> Ver Menú
+                    </a>
+                </div>
+
+                <!-- Feature Badges -->
+                <div class="grid grid-cols-3 gap-4 border-t border-gray-700 pt-8">
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3">
+                        <i class="fas fa-leaf text-green-500 text-2xl"></i>
+                        <span class="text-xs sm:text-sm text-gray-300">Ingredientes<br>100% frescos</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3">
+                        <i class="fas fa-hat-chef text-yellow-500 text-2xl"></i>
+                        <span class="text-xs sm:text-sm text-gray-300">Recetas<br>artesanales</span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3">
+                        <i class="fas fa-truck-fast text-orange-500 text-2xl"></i>
+                        <span class="text-xs sm:text-sm text-gray-300">Envío rápido<br>a domicilio</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-16 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center gap-4 mb-2">
+                    <div class="h-px bg-gray-400 w-12"></div>
+                    <span class="text-sm font-bold tracking-widest text-gray-500 uppercase">Descubre Lo Mejor</span>
+                    <div class="h-px bg-gray-400 w-12"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold uppercase text-dark mb-4">Nuestras Categorías</h2>
+                <p class="text-gray-600">Explora nuestras opciones y elige tu favorita</p>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+
+                <!-- Category Card: Entradas -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="IM/ENTRADAS.png" alt="Entradas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-red-100 flex items-center justify-center text-primary mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">Entradas</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">Deliciosas opciones para comenzar.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                <!-- Category Card: Cremas y Sopas -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="IM/CREM.png" alt="Cremas y Sopas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-drumstick-bite"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">cremas y Sopas</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">Perfectos para compartir y disfrutar.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                <!-- Category Card: Calzone -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="IM/CAL.jpg" alt="Refrescos" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-glass-water"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">Calzone</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">La pizza doblada, un clasico.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                <!-- Category Card: Pizzas -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Pizzas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-red-100 flex items-center justify-center text-primary mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">Pizzas</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">Nuestras pizzas estrella, hechas para ti.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                <!-- Category Card: Pastas -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="IM/PAST.jpg" alt="Pastas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-bowl-food"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">Pastas</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">Cremosas, italianas y deliciosas.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                <!-- Category Card: Refrescos -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Refrescos" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-cake-candles"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">Refrescos</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">Para refrescar tu momento.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                <!-- Category Card: Postres -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden bg-primary flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Refrescos" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-red-100 flex items-center justify-center text-primary mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-[11px] sm:text-lg uppercase mb-1 sm:mb-2">Postres</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">El toque dulce para terminar.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                <!-- Category Card: Bebidas -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Bebidas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">Bebidas</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">La mejor combinación al mejor precio.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                <!-- Info Card: Nosotros -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Nosotros" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">Nosotros</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">Nuestra historia y compromiso.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+                 <!-- Info Card: Contáctanos -->
+                <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition overflow-hidden flex flex-col h-full border border-gray-100">
+                    <div class="h-24 sm:h-40 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Contáctanos" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 sm:p-5 flex flex-col flex-grow text-center items-center">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 mb-2 sm:mb-3 -mt-8 sm:-mt-10 border-2 sm:border-4 border-white relative z-10 text-xs sm:text-base">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3 class="font-bold text-dark text-[11px] sm:text-lg uppercase mb-1 sm:mb-2">Contáctanos</h3>
+                        <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">Estamos aquí para ti.</p>
+                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Promos Banners Section -->
+    <section class="py-8 bg-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Promo 1: 2x1 -->
+                <div class="relative bg-darker rounded-xl overflow-hidden shadow-sm h-40 sm:h-48 md:h-56 flex">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-transparent z-10 w-3/4 sm:w-2/3"></div>
+                    <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="2x1 Pizzas" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                    <div class="relative z-20 p-4 sm:p-6 flex flex-col justify-center h-full text-white w-3/4 sm:w-2/3">
+                        <div class="text-4xl sm:text-5xl md:text-6xl font-bold text-primary leading-none mb-1">2x1</div>
+                        <div class="text-sm sm:text-xl md:text-2xl font-bold uppercase tracking-wide">En Pizzas<br>Medianas</div>
+                    </div>
+                </div>
+
+                <!-- Promo 2: Combo Familiar / Martes de Pasta -->
+                <div class="relative bg-yellow-600 rounded-xl overflow-hidden shadow-sm h-40 sm:h-48 md:h-56 flex">
+                     <div class="absolute inset-0 bg-gradient-to-r from-yellow-700 via-yellow-600/90 to-transparent z-10 w-3/4 sm:w-2/3"></div>
+                    <img src="https://images.unsplash.com/photo-1621996311239-f9c7e0965e52?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Martes de Pasta" class="absolute right-0 top-0 w-full h-full object-cover">
+                    <div class="relative z-20 p-4 sm:p-6 flex flex-col justify-center h-full text-white w-3/4 sm:w-2/3">
+                        <div class="text-[10px] sm:text-sm font-bold uppercase tracking-wider mb-1">Martes de Pasta</div>
+                        <div class="text-4xl sm:text-5xl md:text-6xl font-bold leading-none mb-1">20% <span class="text-lg sm:text-2xl">OFF</span></div>
+                        <div class="text-[10px] sm:text-sm font-bold uppercase tracking-wide">En Todas Las Pastas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combos Destacados Section (from Mobile View) -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                 <div class="flex items-center justify-center gap-4 mb-2">
+                    <i class="fas fa-pizza-slice text-primary"></i>
+                    <h2 class="text-2xl font-bold uppercase text-dark">Combos Destacados</h2>
+                    <i class="fas fa-pizza-slice text-primary"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Combo 1 -->
+                <div class="bg-darker rounded-xl overflow-hidden flex flex-col relative text-white border-2 border-transparent hover:border-primary transition">
+                    <div class="p-6 pb-0 z-10 relative">
+                        <h3 class="text-xl font-bold uppercase mb-4">Combo Familiar</h3>
+                        <ul class="text-sm space-y-2 mb-6 font-medium">
+                            <li>• 2 PIZZAS GRANDES</li>
+                            <li>• PIQUEROS</li>
+                            <li>• 2 REFRESCOS 1.5 L</li>
+                        </ul>
+                        <div class="bg-primary/20 text-primary border border-primary rounded-md px-3 py-1 inline-block">
+                            <span class="text-xs block leading-tight">DESDE</span>
+                            <span class="text-xl font-bold">S/ 79.90</span>
+                        </div>
+                    </div>
+                    <div class="h-40 mt-auto relative overflow-hidden">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Combo Familiar" class="w-full h-full object-cover object-bottom scale-110">
+                    </div>
+                </div>
+
+                <!-- Combo 2 -->
+                <div class="bg-darker rounded-xl overflow-hidden flex flex-col relative text-white border-2 border-transparent hover:border-primary transition">
+                    <div class="p-6 pb-0 z-10 relative">
+                        <h3 class="text-xl font-bold uppercase mb-4">Combo Personal</h3>
+                        <ul class="text-sm space-y-2 mb-6 font-medium">
+                            <li>• 1 PIZZA PERSONAL</li>
+                            <li>• 1 PIQUERO</li>
+                            <li>• 1 REFRESCO</li>
+                        </ul>
+                        <div class="bg-primary/20 text-primary border border-primary rounded-md px-3 py-1 inline-block">
+                            <span class="text-xs block leading-tight">DESDE</span>
+                            <span class="text-xl font-bold">S/ 24.90</span>
+                        </div>
+                    </div>
+                    <div class="h-40 mt-auto relative overflow-hidden">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Combo Personal" class="w-full h-full object-cover object-bottom scale-110">
+                    </div>
+                </div>
+
+                <!-- Combo 3 -->
+                <div class="bg-darker rounded-xl overflow-hidden flex flex-col relative text-white border-2 border-transparent hover:border-primary transition">
+                    <div class="p-6 pb-0 z-10 relative">
+                        <h3 class="text-xl font-bold uppercase mb-4">Combo Pasta</h3>
+                        <ul class="text-sm space-y-2 mb-6 font-medium">
+                            <li>• 2 PASTAS</li>
+                            <li>• 2 REFRESCOS</li>
+                            <li>• PAN DE AJO</li>
+                        </ul>
+                        <div class="bg-primary/20 text-primary border border-primary rounded-md px-3 py-1 inline-block">
+                            <span class="text-xs block leading-tight">DESDE</span>
+                            <span class="text-xl font-bold">S/ 59.90</span>
+                        </div>
+                    </div>
+                    <div class="h-40 mt-auto relative overflow-hidden">
+                         <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+                        <img src="https://images.unsplash.com/photo-1621996311239-f9c7e0965e52?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Combo Pasta" class="w-full h-full object-cover object-bottom scale-110">
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#" class="inline-flex items-center justify-center px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-primary hover:bg-red-700 transition uppercase w-full md:w-auto">
+                    <i class="fas fa-users mr-2"></i> Ver Todos Los Combos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="bg-darker text-white py-0 md:py-16">
+        <!-- On mobile, the map is above the info. On desktop, they are side-by-side. -->
+        <div class="flex flex-col md:flex-row max-w-7xl mx-auto md:px-6 lg:px-8">
+
+            <!-- Map Container -->
+            <div class="w-full md:w-1/2 lg:w-2/3 h-64 sm:h-80 md:h-auto order-2 md:order-2 md:rounded-xl overflow-hidden shadow-sm relative">
+                <!-- Mock Map Image -->
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Map Location" class="w-full h-full object-cover">
+                <!-- Location Pin Overlay -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <i class="fas fa-map-marker-alt text-primary text-5xl drop-shadow-lg"></i>
+                </div>
+            </div>
+
+            <!-- Info Container -->
+                <div class="w-full md:w-1/2 lg:w-1/3 p-6 sm:p-8 md:p-8 lg:p-12 order-1 md:order-1 flex flex-col justify-center">
+                <div class="mb-6">
+                        <p class="text-primary font-bold uppercase tracking-widest text-xs sm:text-sm mb-1 text-center md:text-left">¿Dónde Estamos?</p>
+                        <h2 class="text-2xl sm:text-3xl font-bold uppercase text-center md:text-left">Visítanos En Chiclayo</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-map-marker-alt text-primary text-xl mt-1 w-6 text-center"></i>
+                        <div>
+                            <p class="font-medium text-lg">Av. Balta #417 - Chiclayo</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <i class="far fa-clock text-primary text-xl mt-1 w-6 text-center"></i>
+                        <div>
+                            <p class="font-medium text-lg">Lun - Dom: 11:00 a.m. - 11:00 p.m.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-phone-alt text-primary text-xl mt-1 w-6 text-center"></i>
+                        <div>
+                            <p class="font-medium text-lg">(074) 123 456</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-primary hover:bg-red-700 transition uppercase w-full md:w-auto">
+                        Cómo Llegar <i class="fas fa-location-arrow ml-2"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Why Choose Us & Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold uppercase text-dark mb-8">¿Por Qué Elegirnos?</h2>
+
+                <!-- Feature Icons -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-check-circle text-4xl text-gray-800 mb-3 font-light"></i>
+                        <span class="text-sm font-medium text-gray-600 text-center">Calidad<br>Garantizada</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="fas fa-box-open text-4xl text-gray-800 mb-3 font-light"></i>
+                        <span class="text-sm font-medium text-gray-600 text-center">Ingredientes<br>Frescos</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="far fa-heart text-4xl text-gray-800 mb-3 font-light"></i>
+                        <span class="text-sm font-medium text-gray-600 text-center">Hecho con<br>Pasión</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <i class="far fa-user text-4xl text-gray-800 mb-3 font-light"></i>
+                        <span class="text-sm font-medium text-gray-600 text-center">Clientes<br>Satisfechos</span>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-bold uppercase text-dark mb-8">Lo Que Dicen Nuestros Clientes</h3>
+
+                <!-- Testimonial Card -->
+                <div class="max-w-2xl mx-auto bg-light rounded-xl p-8 shadow-sm relative">
+                    <div class="text-primary text-4xl absolute top-4 left-1/2 transform -translate-x-1/2 opacity-20">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-600 text-lg md:text-xl font-medium mb-6 relative z-10 italic">
+                        "Las mejores pizzas de Chiclayo, siempre frescas y deliciosas. 100% recomendado."
+                    </p>
+                    <div class="flex items-center justify-center gap-4">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="María G." class="w-12 h-12 rounded-full object-cover">
+                        <div class="text-left">
+                            <div class="text-yellow-500 text-xs mb-1">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="font-bold text-dark text-sm">María G.</p>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Dots Mock -->
+                    <div class="flex justify-center gap-2 mt-6">
+                        <div class="w-2 h-2 rounded-full bg-primary"></div>
+                        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                        <div class="w-2 h-2 rounded-full bg-gray-300"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-darker text-white pt-12 pb-6 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+
+                <!-- Brand & Social -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <a href="#" class="flex items-center gap-2 mb-4">
+                        <div class="text-2xl sm:text-3xl font-serif italic text-primary font-bold">Chez Maggy</div>
+                        <i class="fas fa-pizza-slice text-yellow-500 text-xl sm:text-2xl"></i>
+                    </a>
+                    <p class="text-gray-400 text-xs sm:text-sm mb-6 max-w-xs">Más que una pizza, una experiencia que te hace volver.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white hover:opacity-80 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center text-white hover:opacity-80 transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white hover:opacity-80 transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white border border-gray-700 hover:opacity-80 transition"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-lg font-bold uppercase mb-4 tracking-wider">Enlaces Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-gray-400 w-full text-center md:text-left">
+                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Inicio <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Menú <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Promociones <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Combos <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Nosotros <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Contáctanos <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                    </ul>
+                </div>
+
+                <!-- Help -->
+                <div class="flex flex-col items-center md:items-start">
+                    <h4 class="text-lg font-bold uppercase mb-4 tracking-wider">Ayuda</h4>
+                    <ul class="space-y-2 text-sm text-gray-400 w-full text-center md:text-left">
+                        <li><a href="#" class="hover:text-primary transition">Preguntas frecuentes</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Política de privacidad</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Términos y condiciones</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Métodos de pago</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Cambios y devoluciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Footer -->
+                <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h4 class="text-lg font-bold uppercase mb-4 tracking-wider">Contáctanos</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-primary mt-1"></i>
+                            <span>Av. Balta #417 - Chiclayo</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-primary"></i>
+                            <span>(074) 123 456</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span>pedidos@chezmaggy.com</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="far fa-clock text-primary mt-1"></i>
+                            <span>Lun - Dom: 11:00 a.m. - 11:00 p.m.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Footer: Copyright & Payments -->
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
+                <p class="text-gray-500 text-[10px] sm:text-xs text-center md:text-left">
+                    &copy; 2024 Pizzeria Chez Maggy. Todos los derechos reservados.
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3">
+                    <div class="bg-white rounded px-2 py-1"><i class="fab fa-cc-visa text-blue-800 text-xl"></i></div>
+                    <div class="bg-white rounded px-2 py-1"><i class="fab fa-cc-mastercard text-red-600 text-xl"></i></div>
+                    <div class="bg-purple-600 rounded px-2 py-1 text-white text-xs font-bold w-10 text-center h-7 flex items-center justify-center italic">yape</div>
+                    <div class="bg-teal-500 rounded px-2 py-1 text-white text-xs font-bold w-10 text-center h-7 flex items-center justify-center italic">plin</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
