@@ -35,14 +35,14 @@
 <!-- Desktop Menu -->
 <nav class="hidden lg:flex space-x-4 xl:space-x-6 text-xs xl:text-sm font-medium items-center uppercase tracking-wide">
 <a class="text-white hover:text-primary transition" href="index.html#">Inicio</a>
-<a class="text-gray-300 hover:text-primary transition" href="index.html#">Entradas</a>
-<a class="text-gray-300 hover:text-primary transition" href="index.html#">Cremas</a>
-<a class="text-gray-300 hover:text-primary transition" href="index.html#">Calzone</a>
-<a class="text-gray-300 hover:text-primary transition" href="index.html#">Pizzas</a>
-<a class="text-gray-300 hover:text-primary transition" href="index.html#">Pastas</a>
-<a class="text-gray-300 hover:text-primary transition" href="index.html#">Refrescos</a>
-<a class="text-gray-300 hover:text-primary transition" href="index.html#">Postres</a>
-<a class="text-gray-300 hover:text-primary transition" href="index.html#">Bebidas</a>
+<a class="text-gray-300 hover:text-primary transition category-link" data-category="entradas" href="#entradas">Entradas</a>
+<a class="text-gray-300 hover:text-primary transition category-link" data-category="cremas" href="#cremas">Cremas</a>
+<a class="text-gray-300 hover:text-primary transition category-link" data-category="calzone" href="#calzone">Calzone</a>
+<a class="text-gray-300 hover:text-primary transition category-link" data-category="pizzas" href="#pizzas">Pizzas</a>
+<a class="text-gray-300 hover:text-primary transition category-link" data-category="pastas" href="#pastas">Pastas</a>
+<a class="text-gray-300 hover:text-primary transition category-link" data-category="refrescos" href="#refrescos">Refrescos</a>
+<a class="text-gray-300 hover:text-primary transition category-link" data-category="postres" href="#postres">Postres</a>
+<a class="text-gray-300 hover:text-primary transition category-link" data-category="bebidas" href="#bebidas">Bebidas</a>
 </nav>
 <!-- Actions (Button + Cart) -->
 <div class="flex items-center gap-4">
@@ -57,7 +57,7 @@
 </div>
 </div>
 </header><main class="pt-10 pb-16 bg-light min-h-screen">
-<section class="py-12 bg-white" id="entradas-menu">
+<section class="py-12 bg-white menu-section" data-category="entradas" id="entradas-menu">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-8">
 <div class="flex items-center justify-center gap-4 mb-2">
@@ -152,8 +152,7 @@
 </div>
 </div>
 </section>
-
-<section class="py-12 bg-white border-t border-gray-100" id="cremas-menu">
+<section class="py-12 bg-white border-t border-gray-100 menu-section" data-category="cremas" id="cremas-menu">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="text-center mb-8">
 <div class="flex items-center justify-center gap-4 mb-2">
