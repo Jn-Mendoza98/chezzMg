@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chez Maggy Pizzeria</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="script.js"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Custom CSS -->
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body class="bg-light text-gray-800"><header class="bg-darker text-white sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Mobile Menu Button -->
+<div class="flex items-center lg:hidden">
+<button class="text-white hover:text-primary focus:outline-none focus:text-primary" type="button">
+<i class="fas fa-bars text-2xl"></i>
+</button>
+</div>
+<!-- Logo -->
+<div class="flex-shrink-0 flex items-center justify-center lg:justify-start flex-1 lg:flex-none">
+<a class="flex items-center gap-2" href="index.html#">
+<!-- Mocking Logo with Text + Icon -->
+<div class="text-2xl font-serif italic text-primary font-bold">Chez Maggy</div>
+<i class="fas fa-pizza-slice text-yellow-500 text-xl"></i>
+</a>
+</div>
+<!-- Desktop Menu -->
+<nav class="hidden lg:flex space-x-4 xl:space-x-6 text-xs xl:text-sm font-medium items-center uppercase tracking-wide">
+<a class="text-white hover:text-primary transition" href="index.html#">Inicio</a>
+<a class="text-gray-300 hover:text-primary transition" href="index.html#">Entradas</a>
+<a class="text-gray-300 hover:text-primary transition" href="index.html#">Cremas</a>
+<a class="text-gray-300 hover:text-primary transition" href="index.html#">Calzone</a>
+<a class="text-gray-300 hover:text-primary transition" href="index.html#">Pizzas</a>
+<a class="text-gray-300 hover:text-primary transition" href="index.html#">Pastas</a>
+<a class="text-gray-300 hover:text-primary transition" href="index.html#">Refrescos</a>
+<a class="text-gray-300 hover:text-primary transition" href="index.html#">Postres</a>
+<a class="text-gray-300 hover:text-primary transition" href="index.html#">Bebidas</a>
+</nav>
+<!-- Actions (Button + Cart) -->
+<div class="flex items-center gap-4">
+<a class="hidden lg:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-primary hover:bg-red-700 transition uppercase" href="index.html#">
+                        Pedir Ahora
+                    </a>
+<button class="relative text-white hover:text-primary transition">
+<i class="fas fa-shopping-cart text-xl"></i>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+</button>
+</div>
+</div>
+</div>
+</header><main class="pt-10 pb-16 bg-light min-h-screen">
+<section class="py-12 bg-white" id="entradas-menu">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-8">
+<div class="flex items-center justify-center gap-4 mb-2">
+<i class="fas fa-leaf text-primary"></i>
+<h2 class="text-2xl font-bold uppercase text-dark">Entradas</h2>
+<i class="fas fa-leaf text-primary"></i>
+</div>
+<p class="text-gray-600">Para empezar con el mejor sabor</p>
+</div>
+<!-- Menu Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Item 1 -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+<img alt="Pan al Ajo Mantequilla" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1589302168068-964664d93cb0?auto=format&fit=crop&w=400&q=80"/>
+</div>
+<div class="p-3 sm:p-4 flex flex-col justify-center w-2/3 sm:w-3/5">
+<h4 class="font-bold text-dark text-sm sm:text-base mb-1 line-clamp-1">Pan al Ajo Mantequilla</h4>
+<p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Porción de 4 panes con nuestra mantequilla de ajo especial.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="text-primary font-bold text-sm sm:text-base">S/ 6.90</span>
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<i class="fas fa-plus text-xs sm:text-sm"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+<img alt="Pan al Ajo con Queso" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80"/>
+</div>
+<div class="p-3 sm:p-4 flex flex-col justify-center w-2/3 sm:w-3/5">
+<h4 class="font-bold text-dark text-sm sm:text-base mb-1 line-clamp-1">Pan al Ajo con Queso</h4>
+<p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Pan al ajo gratinado con abundante queso mozzarella.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="text-primary font-bold text-sm sm:text-base">S/ 9.90</span>
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<i class="fas fa-plus text-xs sm:text-sm"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+<img alt="Tequeños de Queso" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80"/>
+</div>
+<div class="p-3 sm:p-4 flex flex-col justify-center w-2/3 sm:w-3/5">
+<h4 class="font-bold text-dark text-sm sm:text-base mb-1 line-clamp-1">Tequeños de Queso</h4>
+<p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">6 tequeños rellenos de queso con salsa guacamole.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="text-primary font-bold text-sm sm:text-base">S/ 12.90</span>
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<i class="fas fa-plus text-xs sm:text-sm"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+<img alt="Alitas BBQ" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1524114664604-cd8133cd6771?auto=format&fit=crop&w=400&q=80"/>
+</div>
+<div class="p-3 sm:p-4 flex flex-col justify-center w-2/3 sm:w-3/5">
+<h4 class="font-bold text-dark text-sm sm:text-base mb-1 line-clamp-1">Alitas BBQ</h4>
+<p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">6 alitas bañadas en salsa BBQ dulce y un toque ahumado.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="text-primary font-bold text-sm sm:text-base">S/ 16.90</span>
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<i class="fas fa-plus text-xs sm:text-sm"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Item 5 -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+<img alt="Papas Fritas Clásicas" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=400&q=80"/>
+</div>
+<div class="p-3 sm:p-4 flex flex-col justify-center w-2/3 sm:w-3/5">
+<h4 class="font-bold text-dark text-sm sm:text-base mb-1 line-clamp-1">Papas Fritas Clásicas</h4>
+<p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Porción grande de papas fritas doradas y crujientes.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="text-primary font-bold text-sm sm:text-base">S/ 8.90</span>
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<i class="fas fa-plus text-xs sm:text-sm"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main><footer class="bg-darker text-white pt-12 pb-6 border-t border-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+<!-- Brand & Social -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<a class="flex items-center gap-2 mb-4" href="index.html#">
+<div class="text-2xl sm:text-3xl font-serif italic text-primary font-bold">Chez Maggy</div>
+<i class="fas fa-pizza-slice text-yellow-500 text-xl sm:text-2xl"></i>
+</a>
+<p class="text-gray-400 text-xs sm:text-sm mb-6 max-w-xs">Más que una pizza, una experiencia que te hace volver.</p>
+<div class="flex gap-4">
+<a class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white hover:opacity-80 transition" href="index.html#"><i class="fab fa-facebook-f"></i></a>
+<a class="w-8 h-8 rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 flex items-center justify-center text-white hover:opacity-80 transition" href="index.html#"><i class="fab fa-instagram"></i></a>
+<a class="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center text-white hover:opacity-80 transition" href="index.html#"><i class="fab fa-whatsapp"></i></a>
+<a class="w-8 h-8 rounded-full bg-black flex items-center justify-center text-white border border-gray-700 hover:opacity-80 transition" href="index.html#"><i class="fab fa-tiktok"></i></a>
+</div>
+</div>
+<!-- Quick Links -->
+<div class="flex flex-col items-center md:items-start">
+<h4 class="text-lg font-bold uppercase mb-4 tracking-wider">Enlaces Rápidos</h4>
+<ul class="space-y-2 text-sm text-gray-400 w-full text-center md:text-left">
+<li><a class="hover:text-primary transition flex items-center justify-between md:justify-start" href="index.html#">Inicio <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+<li><a class="hover:text-primary transition flex items-center justify-between md:justify-start" href="index.html#">Menú <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+<li><a class="hover:text-primary transition flex items-center justify-between md:justify-start" href="index.html#">Promociones <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+<li><a class="hover:text-primary transition flex items-center justify-between md:justify-start" href="index.html#">Combos <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+<li><a class="hover:text-primary transition flex items-center justify-between md:justify-start" href="index.html#">Nosotros <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+<li><a class="hover:text-primary transition flex items-center justify-between md:justify-start" href="index.html#">Contáctanos <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+</ul>
+</div>
+<!-- Help -->
+<div class="flex flex-col items-center md:items-start">
+<h4 class="text-lg font-bold uppercase mb-4 tracking-wider">Ayuda</h4>
+<ul class="space-y-2 text-sm text-gray-400 w-full text-center md:text-left">
+<li><a class="hover:text-primary transition" href="index.html#">Preguntas frecuentes</a></li>
+<li><a class="hover:text-primary transition" href="index.html#">Política de privacidad</a></li>
+<li><a class="hover:text-primary transition" href="index.html#">Términos y condiciones</a></li>
+<li><a class="hover:text-primary transition" href="index.html#">Métodos de pago</a></li>
+<li><a class="hover:text-primary transition" href="index.html#">Cambios y devoluciones</a></li>
+</ul>
+</div>
+<!-- Contact Footer -->
+<div class="flex flex-col items-center md:items-start text-center md:text-left">
+<h4 class="text-lg font-bold uppercase mb-4 tracking-wider">Contáctanos</h4>
+<ul class="space-y-3 text-sm text-gray-400">
+<li class="flex items-start gap-3">
+<i class="fas fa-map-marker-alt text-primary mt-1"></i>
+<span>Av. Balta #417 - Chiclayo</span>
+</li>
+<li class="flex items-center gap-3">
+<i class="fas fa-phone-alt text-primary"></i>
+<span>(074) 123 456</span>
+</li>
+<li class="flex items-center gap-3">
+<i class="fas fa-envelope text-primary"></i>
+<span>pedidos@chezmaggy.com</span>
+</li>
+<li class="flex items-start gap-3">
+<i class="far fa-clock text-primary mt-1"></i>
+<span>Lun - Dom: 11:00 a.m. - 11:00 p.m.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom Footer: Copyright & Payments -->
+<div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4">
+<p class="text-gray-500 text-[10px] sm:text-xs text-center md:text-left">
+                    © 2024 Pizzeria Chez Maggy. Todos los derechos reservados.
+                </p>
+<div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3">
+<div class="bg-white rounded px-2 py-1"><i class="fab fa-cc-visa text-blue-800 text-xl"></i></div>
+<div class="bg-white rounded px-2 py-1"><i class="fab fa-cc-mastercard text-red-600 text-xl"></i></div>
+<div class="bg-purple-600 rounded px-2 py-1 text-white text-xs font-bold w-10 text-center h-7 flex items-center justify-center italic">yape</div>
+<div class="bg-teal-500 rounded px-2 py-1 text-white text-xs font-bold w-10 text-center h-7 flex items-center justify-center italic">plin</div>
+</div>
+</div>
+</div>
+</footer></body>
+</html>
