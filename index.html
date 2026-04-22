@@ -40,25 +40,25 @@
 
                 <!-- Desktop Menu -->
                 <nav class="hidden lg:flex space-x-4 xl:space-x-6 text-xs xl:text-sm font-medium items-center uppercase tracking-wide">
-                    <a href="#" class="text-white hover:text-primary transition">Inicio</a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition">Entradas</a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition">Cremas</a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition">Calzone</a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition">Pizzas</a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition">Pastas</a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition">Refrescos</a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition">Postres</a>
-                    <a href="#" class="text-gray-300 hover:text-primary transition">Bebidas</a>
+                    <a href="#inicio" class="text-white hover:text-primary transition">Inicio</a>
+                    <a href="#entradas-menu" class="text-gray-300 hover:text-primary transition">Entradas</a>
+                    <a href="#categorias" class="text-gray-300 hover:text-primary transition">Cremas</a>
+                    <a href="#categorias" class="text-gray-300 hover:text-primary transition">Calzone</a>
+                    <a href="#categorias" class="text-gray-300 hover:text-primary transition">Pizzas</a>
+                    <a href="#categorias" class="text-gray-300 hover:text-primary transition">Pastas</a>
+                    <a href="#categorias" class="text-gray-300 hover:text-primary transition">Refrescos</a>
+                    <a href="#categorias" class="text-gray-300 hover:text-primary transition">Postres</a>
+                    <a href="#categorias" class="text-gray-300 hover:text-primary transition">Bebidas</a>
                 </nav>
 
                 <!-- Actions (Button + Cart) -->
                 <div class="flex items-center gap-4">
-                    <a href="#" class="hidden lg:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-primary hover:bg-red-700 transition uppercase">
+                    <a href="#combos" class="hidden lg:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-primary hover:bg-red-700 transition uppercase">
                         Pedir Ahora
                     </a>
                     <button class="relative text-white hover:text-primary transition">
                         <i class="fas fa-shopping-cart text-xl"></i>
-                        <span class="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                        <span class="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
                     </button>
                 </div>
             </div>
@@ -66,7 +66,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative bg-darker text-white">
+    <section id="inicio" class="relative bg-darker text-white">
         <!-- Background Image (Mocked with Unsplash) -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Pizza Background" class="w-full h-full object-cover opacity-60">
@@ -88,10 +88,10 @@
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-primary hover:bg-red-700 transition w-full sm:w-auto uppercase">
+                    <a href="#combos" class="inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-bold text-white bg-primary hover:bg-red-700 transition w-full sm:w-auto uppercase">
                         <i class="fas fa-motorcycle mr-2"></i> Pedir Ahora
                     </a>
-                    <a href="#" class="inline-flex items-center justify-center px-6 py-3 border border-yellow-500 rounded-md shadow-sm text-base font-bold text-yellow-500 bg-transparent hover:bg-yellow-500 hover:text-dark transition w-full sm:w-auto uppercase">
+                    <a href="#categorias" class="inline-flex items-center justify-center px-6 py-3 border border-yellow-500 rounded-md shadow-sm text-base font-bold text-yellow-500 bg-transparent hover:bg-yellow-500 hover:text-dark transition w-full sm:w-auto uppercase">
                         <i class="fas fa-book-open mr-2"></i> Ver Menú
                     </a>
                 </div>
@@ -116,7 +116,7 @@
     </section>
 
     <!-- Categories Section -->
-    <section class="py-16 bg-light">
+    <section id="categorias" class="py-16 bg-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <div class="flex items-center justify-center gap-4 mb-2">
@@ -142,7 +142,7 @@
                         </div>
                         <h3 class="font-bold text-dark text-sm sm:text-lg uppercase mb-1 sm:mb-2">Entradas</h3>
                         <p class="text-gray-500 text-[10px] sm:text-sm mb-3 sm:mb-4 flex-grow line-clamp-2">Deliciosas opciones para comenzar.</p>
-                        <a href="#" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
+                        <a href="#entradas-menu" class="inline-block px-2 sm:px-4 py-1.5 sm:py-2 border border-gray-200 rounded-full text-[10px] sm:text-xs font-bold text-gray-600 hover:border-primary hover:text-primary transition uppercase w-full">Ver Más</a>
                     </div>
                 </div>
 
@@ -285,8 +285,100 @@
         </div>
     </section>
 
+    <!-- Entradas Menu Section -->
+    <section id="entradas-menu" class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <div class="flex items-center justify-center gap-4 mb-2">
+                    <i class="fas fa-leaf text-primary"></i>
+                    <h2 class="text-2xl font-bold uppercase text-dark">Entradas</h2>
+                    <i class="fas fa-leaf text-primary"></i>
+                </div>
+                <p class="text-gray-600">Para empezar con el mejor sabor</p>
+            </div>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+                    <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+                        <img src="IM/ENTRADAS.png" alt="Pan al Ajo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col justify-center w-2/3 sm:w-3/5">
+                        <h3 class="font-bold text-dark text-sm sm:text-base mb-1">Pan al Ajo Mantequilla</h3>
+                        <p class="text-gray-500 text-xs line-clamp-2 mb-2">Porción de 4 panes con nuestra mantequilla de ajo especial.</p>
+                        <div class="font-bold text-primary text-sm sm:text-base">S/ 6.90</div>
+                    </div>
+                    <button class="absolute bottom-3 right-3 bg-primary hover:bg-red-700 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+                    <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1573140247632-f8fd74997d5c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Pan al Ajo con Queso" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col justify-center w-2/3 sm:w-3/5">
+                        <h3 class="font-bold text-dark text-sm sm:text-base mb-1">Pan al Ajo con Queso</h3>
+                        <p class="text-gray-500 text-xs line-clamp-2 mb-2">Pan al ajo gratinado con abundante queso mozzarella.</p>
+                        <div class="font-bold text-primary text-sm sm:text-base">S/ 9.90</div>
+                    </div>
+                    <button class="absolute bottom-3 right-3 bg-primary hover:bg-red-700 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+                    <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Tequeños" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col justify-center w-2/3 sm:w-3/5">
+                        <h3 class="font-bold text-dark text-sm sm:text-base mb-1">Tequeños de Queso</h3>
+                        <p class="text-gray-500 text-xs line-clamp-2 mb-2">6 tequeños rellenos de queso con salsa guacamole.</p>
+                        <div class="font-bold text-primary text-sm sm:text-base">S/ 12.90</div>
+                    </div>
+                    <button class="absolute bottom-3 right-3 bg-primary hover:bg-red-700 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+                    <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Alitas BBQ" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col justify-center w-2/3 sm:w-3/5">
+                        <h3 class="font-bold text-dark text-sm sm:text-base mb-1">Alitas BBQ</h3>
+                        <p class="text-gray-500 text-xs line-clamp-2 mb-2">6 alitas bañadas en salsa BBQ dulce y un toque ahumado.</p>
+                        <div class="font-bold text-primary text-sm sm:text-base">S/ 16.90</div>
+                    </div>
+                    <button class="absolute bottom-3 right-3 bg-primary hover:bg-red-700 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+                    <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
+                        <img src="https://images.unsplash.com/photo-1627662056086-63f5d5069eb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60" alt="Papas Fritas" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-3 flex flex-col justify-center w-2/3 sm:w-3/5">
+                        <h3 class="font-bold text-dark text-sm sm:text-base mb-1">Papas Fritas Clásicas</h3>
+                        <p class="text-gray-500 text-xs line-clamp-2 mb-2">Porción grande de papas fritas doradas y crujientes.</p>
+                        <div class="font-bold text-primary text-sm sm:text-base">S/ 8.90</div>
+                    </div>
+                    <button class="absolute bottom-3 right-3 bg-primary hover:bg-red-700 text-white w-8 h-8 rounded-full flex items-center justify-center shadow-sm transition">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Promos Banners Section -->
-    <section class="py-8 bg-light">
+    <section id="promos" class="py-8 bg-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- Promo 1: 2x1 -->
@@ -314,7 +406,7 @@
     </section>
 
     <!-- Combos Destacados Section (from Mobile View) -->
-    <section class="py-12 bg-white">
+    <section id="combos" class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-8">
                  <div class="flex items-center justify-center gap-4 mb-2">
@@ -395,7 +487,7 @@
     </section>
 
     <!-- Location Section -->
-    <section class="bg-darker text-white py-0 md:py-16">
+    <section id="ubicacion" class="bg-darker text-white py-0 md:py-16">
         <!-- On mobile, the map is above the info. On desktop, they are side-by-side. -->
         <div class="flex flex-col md:flex-row max-w-7xl mx-auto md:px-6 lg:px-8">
 
@@ -450,7 +542,7 @@
     </section>
 
     <!-- Why Choose Us & Testimonials Section -->
-    <section class="py-16 bg-white">
+    <section id="nosotros" class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold uppercase text-dark mb-8">¿Por Qué Elegirnos?</h2>
@@ -534,12 +626,12 @@
                 <div class="flex flex-col items-center md:items-start">
                     <h4 class="text-lg font-bold uppercase mb-4 tracking-wider">Enlaces Rápidos</h4>
                     <ul class="space-y-2 text-sm text-gray-400 w-full text-center md:text-left">
-                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Inicio <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
-                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Menú <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
-                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Promociones <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
-                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Combos <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
-                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Nosotros <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
-                        <li><a href="#" class="hover:text-primary transition flex items-center justify-between md:justify-start">Contáctanos <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#inicio" class="hover:text-primary transition flex items-center justify-between md:justify-start">Inicio <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#categorias" class="hover:text-primary transition flex items-center justify-between md:justify-start">Menú <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#promos" class="hover:text-primary transition flex items-center justify-between md:justify-start">Promociones <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#combos" class="hover:text-primary transition flex items-center justify-between md:justify-start">Combos <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#nosotros" class="hover:text-primary transition flex items-center justify-between md:justify-start">Nosotros <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
+                        <li><a href="#ubicacion" class="hover:text-primary transition flex items-center justify-between md:justify-start">Contáctanos <i class="fas fa-chevron-right text-xs md:hidden"></i></a></li>
                     </ul>
                 </div>
 
