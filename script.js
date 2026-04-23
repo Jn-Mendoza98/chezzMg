@@ -209,8 +209,35 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('cancel-order').addEventListener('click', closeInvoice);
 
             document.getElementById('checkout-order').addEventListener('click', () => {
-                if (cart.length === 0) return;
-                alert('¡Pedido finalizado con éxito! Gracias por tu compra.');
+                if (cart.length === 0) {
+                    alert('Tu carrito está vacío');
+                    return;
+                }
+
+                // Generar mensaje para WhatsApp
+                let mensaje = "*🧾 Pedido - Chez Maggy*\n\n";
+                let total = 0;
+
+                cart.forEach(item => {
+                    const subtotal = item.price * item.quantity;
+                    total += subtotal;
+                    mensaje += `🍕 *${item.title}* x${item.quantity} - S/ ${subtotal.toFixed(2)}\n`;
+                });
+
+                mensaje += `\n💰 *Total: S/ ${total.toFixed(2)}*\n\n`;
+                mensaje += "📍 Hola, quiero realizar este pedido.";
+
+                // Codificar el mensaje para la URL
+                const mensajeCodificado = encodeURIComponent(mensaje);
+
+                // Número de WhatsApp (ejemplo genérico de Perú)
+                const numeroWhatsApp = "51999999999";
+                const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
+
+                // Abrir WhatsApp en una nueva pestaña
+                window.open(urlWhatsApp, '_blank');
+
+                // Vaciar carrito y cerrar modal
                 cart = [];
                 saveCart();
                 updateCartCounter(false);
