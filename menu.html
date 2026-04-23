@@ -49,9 +49,9 @@
 <a class="hidden lg:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-bold text-white bg-primary hover:bg-red-700 transition uppercase" href="index.html#">
                         Pedir Ahora
                     </a>
-<button class="relative text-white hover:text-primary transition">
+<button class="relative text-white hover:text-primary transition" id="cart-button">
 <i class="fas fa-shopping-cart text-xl"></i>
-<span class="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">0</span>
+<span class="absolute -top-2 -right-2 bg-primary text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden" id="cart-counter">0</span>
 </button>
 </div>
 </div>
@@ -70,7 +70,7 @@
 <!-- Menu Grid -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Item 1 -->
-<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative product-card">
 <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
 <img alt="Pan al Ajo Mantequilla" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1589302168068-964664d93cb0?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
 </div>
@@ -79,14 +79,14 @@
 <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Porción de 4 panes con nuestra mantequilla de ajo especial.</p>
 <div class="flex justify-between items-end mt-auto">
 <span class="text-primary font-bold text-sm sm:text-base">S/ 6.90</span>
-<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition add-to-cart-btn">
 <i class="fas fa-plus text-xs sm:text-sm"></i>
 </button>
 </div>
 </div>
 </div>
 <!-- Item 2 -->
-<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative product-card">
 <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
 <img alt="Pan al Ajo con Queso" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
 </div>
@@ -95,14 +95,14 @@
 <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Pan al ajo gratinado con abundante queso mozzarella.</p>
 <div class="flex justify-between items-end mt-auto">
 <span class="text-primary font-bold text-sm sm:text-base">S/ 9.90</span>
-<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition add-to-cart-btn">
 <i class="fas fa-plus text-xs sm:text-sm"></i>
 </button>
 </div>
 </div>
 </div>
 <!-- Item 3 -->
-<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative product-card">
 <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
 <img alt="Tequeños de Queso" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
 </div>
@@ -111,14 +111,14 @@
 <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">6 tequeños rellenos de queso con salsa guacamole.</p>
 <div class="flex justify-between items-end mt-auto">
 <span class="text-primary font-bold text-sm sm:text-base">S/ 12.90</span>
-<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition add-to-cart-btn">
 <i class="fas fa-plus text-xs sm:text-sm"></i>
 </button>
 </div>
 </div>
 </div>
 <!-- Item 4 -->
-<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative product-card">
 <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
 <img alt="Alitas BBQ" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1524114664604-cd8133cd6771?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
 </div>
@@ -127,14 +127,14 @@
 <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">6 alitas bañadas en salsa BBQ dulce y un toque ahumado.</p>
 <div class="flex justify-between items-end mt-auto">
 <span class="text-primary font-bold text-sm sm:text-base">S/ 16.90</span>
-<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition add-to-cart-btn">
 <i class="fas fa-plus text-xs sm:text-sm"></i>
 </button>
 </div>
 </div>
 </div>
 <!-- Item 5 -->
-<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative product-card">
 <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
 <img alt="Papas Fritas Clásicas" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
 </div>
@@ -143,7 +143,7 @@
 <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Porción grande de papas fritas doradas y crujientes.</p>
 <div class="flex justify-between items-end mt-auto">
 <span class="text-primary font-bold text-sm sm:text-base">S/ 8.90</span>
-<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition add-to-cart-btn">
 <i class="fas fa-plus text-xs sm:text-sm"></i>
 </button>
 </div>
@@ -165,7 +165,7 @@
 <!-- Menu Grid -->
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 <!-- Item 1 -->
-<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative product-card">
 <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
 <img alt="Crema de Champiñones" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
 </div>
@@ -174,14 +174,14 @@
 <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Deliciosa crema casera con trozos de champiñones frescos y un toque de crema de leche.</p>
 <div class="flex justify-between items-end mt-auto">
 <span class="text-primary font-bold text-sm sm:text-base">S/ 14.90</span>
-<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition add-to-cart-btn">
 <i class="fas fa-plus text-xs sm:text-sm"></i>
 </button>
 </div>
 </div>
 </div>
 <!-- Item 2 -->
-<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative product-card">
 <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
 <img alt="Sopa Criolla" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1603105037880-880cd4136bd4?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
 </div>
@@ -190,14 +190,14 @@
 <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Tradicional sopa peruana con carne, huevo escalfado y tostadas al ajo.</p>
 <div class="flex justify-between items-end mt-auto">
 <span class="text-primary font-bold text-sm sm:text-base">S/ 18.90</span>
-<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition add-to-cart-btn">
 <i class="fas fa-plus text-xs sm:text-sm"></i>
 </button>
 </div>
 </div>
 </div>
 <!-- Item 3 -->
-<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative">
+<div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-row h-32 hover:shadow-md transition relative product-card">
 <div class="w-1/3 sm:w-2/5 h-full overflow-hidden bg-gray-50 flex-shrink-0">
 <img alt="Crema de Espárragos" class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1548943487-a2e4e43b4850?auto=format&amp;fit=crop&amp;w=400&amp;q=80"/>
 </div>
@@ -206,7 +206,7 @@
 <p class="text-gray-500 text-[10px] sm:text-xs mb-2 line-clamp-2">Suave crema de espárragos verdes acompañada de crutones crujientes.</p>
 <div class="flex justify-between items-end mt-auto">
 <span class="text-primary font-bold text-sm sm:text-base">S/ 15.90</span>
-<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition">
+<button class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-red-700 transition add-to-cart-btn">
 <i class="fas fa-plus text-xs sm:text-sm"></i>
 </button>
 </div>
