@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mensajeCodificado = encodeURIComponent(mensaje);
 
                 // Número de WhatsApp (ejemplo genérico de Perú)
-                const numeroWhatsApp = "51917142975";
+                const numeroWhatsApp = "51999999999";
                 const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
 
                 // Abrir WhatsApp en una nueva pestaña
@@ -311,4 +311,233 @@ document.addEventListener('DOMContentLoaded', () => {
             openInvoice();
         });
     }
+
+    // Calzone Configurator Logic
+    const calzoneTabs = document.querySelectorAll('.calzone-tab');
+    const calzoneContents = document.querySelectorAll('.calzone-content');
+    const calzoneTabIndicator = document.getElementById('calzone-tab-indicator');
+    const calzoneStickyFooter = document.getElementById('calzone-sticky-footer');
+
+    const summaryTitle = document.getElementById('calzone-summary-title');
+    const summaryDetails = document.getElementById('calzone-summary-details');
+    const summaryPrice = document.getElementById('calzone-summary-price');
+    const addCalzoneBtn = document.getElementById('add-calzone-btn');
+
+    let currentCalzoneType = 'tradicional';
+    const calzonePrices = {
+        tradicional: 25.90,
+        vegetariano: 27.90,
+        amigusto: 32.90
+    };
+
+    // "A Mi Gusto" Ingredients
+    const amgIngredientsList = [
+        "Aceituna", "Ají", "Albahaca", "Cabanossi", "Cebolla", "Cecina",
+        "Champiñones", "Chorizo", "Durazno", "Espárrago", "Jamón", "Papaya",
+        "Pepperoni", "Pimiento", "Piña", "Plátano", "Pollo", "Salame",
+        "Salchicha", "Tocino", "Tomate en rodajas"
+    ];
+    let selectedAmgIngredients = [];
+    const MAX_AMG_INGREDIENTS = 6;
+
+    // Render "A Mi Gusto" Ingredients
+    function renderAmgIngredients() {
+        const grid = document.getElementById('amg-ingredients-grid');
+        if (!grid) return;
+
+        grid.innerHTML = amgIngredientsList.map(ing => `
+            <label class="flex flex-col border border-gray-200 rounded-xl p-3 cursor-pointer hover:border-primary transition amg-ing-label select-none relative overflow-hidden bg-gray-50 h-20">
+                <input type="checkbox" value="${ing}" class="peer hidden amg-ing-checkbox">
+                <div class="absolute inset-0 bg-primary/10 opacity-0 peer-checked:opacity-100 transition"></div>
+                <div class="absolute top-2 right-2 w-5 h-5 rounded-full border-2 border-gray-300 peer-checked:border-primary peer-checked:bg-primary flex items-center justify-center transition">
+                    <i class="fas fa-check text-white text-[10px] opacity-0 peer-checked:opacity-100"></i>
+                </div>
+                <span class="text-xs font-bold text-gray-700 peer-checked:text-primary mt-auto relative z-10 text-center leading-tight">${ing}</span>
+            </label>
+        `).join('');
+
+        const checkboxes = grid.querySelectorAll('.amg-ing-checkbox');
+        const counter = document.getElementById('amg-counter');
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    if (selectedAmgIngredients.length >= MAX_AMG_INGREDIENTS) {
+                        e.target.checked = false;
+                        alert('Máximo 6 ingredientes permitidos.');
+                        return;
+                    }
+                    selectedAmgIngredients.push(e.target.value);
+                } else {
+                    selectedAmgIngredients = selectedAmgIngredients.filter(ing => ing !== e.target.value);
+                }
+
+                counter.textContent = `${selectedAmgIngredients.length}/${MAX_AMG_INGREDIENTS}`;
+
+                // Visual feedback for max reached
+                if (selectedAmgIngredients.length >= MAX_AMG_INGREDIENTS) {
+                    counter.classList.replace('bg-dark', 'bg-primary');
+                    checkboxes.forEach(box => {
+                        if (!box.checked) box.closest('label').classList.add('opacity-50', 'cursor-not-allowed');
+                    });
+                } else {
+                    counter.classList.replace('bg-primary', 'bg-dark');
+                    checkboxes.forEach(box => {
+                        box.closest('label').classList.remove('opacity-50', 'cursor-not-allowed');
+                    });
+                }
+
+                updateCalzoneSummary();
+            });
+        });
+    }
+
+    // Update Footer Summary
+    function updateCalzoneSummary() {
+        if (!calzoneStickyFooter) return;
+
+        let detailsText = '';
+        let isValid = true;
+
+        if (currentCalzoneType === 'tradicional') {
+            summaryTitle.textContent = 'Calzone Tradicional';
+            detailsText = 'Clásico';
+            summaryPrice.textContent = `S/ ${calzonePrices.tradicional.toFixed(2)}`;
+        } else if (currentCalzoneType === 'vegetariano') {
+            summaryTitle.textContent = 'Calzone Vegetariano';
+            const selectedOlive = document.querySelector('input[name="veg-aceitunas"]:checked')?.value || 'Ninguna';
+            detailsText = selectedOlive !== 'Ninguna' ? `Aceitunas: ${selectedOlive}` : 'Sin Aceitunas';
+            summaryPrice.textContent = `S/ ${calzonePrices.vegetariano.toFixed(2)}`;
+        } else if (currentCalzoneType === 'amigusto') {
+            summaryTitle.textContent = 'Calzone A Mi Gusto';
+            if (selectedAmgIngredients.length === 0) {
+                detailsText = 'Selecciona ingredientes...';
+                isValid = false;
+            } else {
+                detailsText = selectedAmgIngredients.join(', ');
+            }
+            summaryPrice.textContent = `S/ ${calzonePrices.amigusto.toFixed(2)}`;
+        }
+
+        summaryDetails.textContent = detailsText;
+
+        // Show/hide footer
+        calzoneStickyFooter.classList.remove('hidden');
+
+        // Disable/Enable Add button
+        if (isValid) {
+            addCalzoneBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            addCalzoneBtn.disabled = false;
+        } else {
+            addCalzoneBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            addCalzoneBtn.disabled = true;
+        }
+    }
+
+    // Tab Switching Logic
+    calzoneTabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            // Update Active Tab Styling
+            calzoneTabs.forEach(t => {
+                t.classList.remove('text-gray-800');
+                t.classList.add('text-gray-500');
+            });
+            tab.classList.remove('text-gray-500');
+            tab.classList.add('text-gray-800');
+
+            // Move Indicator
+            if (calzoneTabIndicator) {
+                calzoneTabIndicator.style.transform = `translateX(${index * 100}%)`;
+            }
+
+            // Show Content
+            const target = tab.dataset.target;
+            currentCalzoneType = target;
+
+            calzoneContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+            document.getElementById(`calzone-content-${target}`).classList.remove('hidden');
+
+            updateCalzoneSummary();
+        });
+    });
+
+    // Event listeners for Vegetariano Radios
+    const vegRadios = document.querySelectorAll('input[name="veg-aceitunas"]');
+    vegRadios.forEach(radio => {
+        radio.addEventListener('change', updateCalzoneSummary);
+    });
+
+    // Add Calzone to Cart
+    if (addCalzoneBtn) {
+        addCalzoneBtn.addEventListener('click', () => {
+            const title = summaryTitle.textContent;
+            const details = summaryDetails.textContent;
+            const price = parseFloat(summaryPrice.textContent.replace('S/ ', ''));
+
+            const fullTitle = `${title} (${details})`;
+
+            const existingItem = cart.find(item => item.title === fullTitle);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    title: fullTitle,
+                    price: price,
+                    quantity: 1,
+                    imgUrl: 'IM/CAL.jpg'
+                });
+            }
+
+            saveCart();
+            updateCartCounter(true);
+
+            // Visual feedback on button
+            const originalText = addCalzoneBtn.innerHTML;
+            addCalzoneBtn.innerHTML = '<i class="fas fa-check"></i> Añadido';
+            addCalzoneBtn.classList.replace('bg-primary', 'bg-green-500');
+
+            setTimeout(() => {
+                addCalzoneBtn.innerHTML = originalText;
+                addCalzoneBtn.classList.replace('bg-green-500', 'bg-primary');
+            }, 1500);
+        });
+    }
+
+    // Initialize Menu Category specific logic
+    function onCategoryChange(category) {
+        if (category === 'calzone') {
+            calzoneStickyFooter?.classList.remove('hidden');
+            updateCalzoneSummary();
+        } else {
+            calzoneStickyFooter?.classList.add('hidden');
+        }
+    }
+
+    // Hook into existing menu filtering
+    const originalFilterCategory = window.filterCategory;
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.target.id === 'calzone' && !mutation.target.classList.contains('hidden')) {
+                onCategoryChange('calzone');
+            } else if (mutation.target.id === 'calzone' && mutation.target.classList.contains('hidden')) {
+                onCategoryChange('other');
+            }
+        });
+    });
+
+    const calzoneSection = document.getElementById('calzone');
+    if (calzoneSection) {
+        observer.observe(calzoneSection, { attributes: true, attributeFilter: ['class'] });
+    }
+
+    // Initial render
+    renderAmgIngredients();
+
+    // Check initial state
+    if (window.location.hash === '#calzone') {
+        onCategoryChange('calzone');
+    }
+
 });

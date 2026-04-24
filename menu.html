@@ -215,6 +215,102 @@
 </div>
 </div>
 </section>
+
+<!-- Calzone Section -->
+<section id="calzone" class="menu-section hidden py-0 sm:py-12 bg-light sm:bg-transparent min-h-screen sm:min-h-0" data-category="calzone">
+    <!-- Top Image Container (App Style) -->
+    <div class="relative h-48 sm:h-64 sm:rounded-xl sm:mx-auto max-w-7xl lg:mx-8 sm:mt-0 overflow-hidden shadow-sm">
+        <img src="IM/CAL.jpg" alt="Calzone" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=800&q=80'">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-4 sm:p-6">
+            <h2 class="text-3xl font-bold uppercase text-white tracking-wide">Elige Tu Calzone</h2>
+        </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 mt-6 pb-32 sm:pb-8 relative">
+
+        <!-- Tabs -->
+        <div class="flex bg-gray-200 p-1 rounded-xl mb-6 relative">
+            <button class="calzone-tab active flex-1 py-2 text-sm font-bold text-gray-800 rounded-lg transition-all z-10" data-target="tradicional">Tradicional</button>
+            <button class="calzone-tab flex-1 py-2 text-sm font-bold text-gray-500 rounded-lg transition-all z-10" data-target="vegetariano">Vegetariano</button>
+            <button class="calzone-tab flex-1 py-2 text-sm font-bold text-gray-500 rounded-lg transition-all z-10" data-target="amigusto">A Mi Gusto</button>
+            <!-- Active Tab Indicator -->
+            <div id="calzone-tab-indicator" class="absolute top-1 bottom-1 left-1 bg-white rounded-lg shadow-sm transition-all duration-300" style="width: calc(33.333% - 0.5rem); transform: translateX(0%);"></div>
+        </div>
+
+        <!-- Tab Contents -->
+        <div id="calzone-content-tradicional" class="calzone-content">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5">
+                <h3 class="text-xl font-bold text-dark mb-2">Calzone Tradicional</h3>
+                <p class="text-gray-600 text-sm mb-4">Nuestra clásica masa cerrada al horno, rellena de abundante queso mozzarella, jamón inglés y salsa de tomate especial de la casa.</p>
+                <div class="text-primary font-bold text-xl">S/ 25.90</div>
+            </div>
+        </div>
+
+        <div id="calzone-content-vegetariano" class="calzone-content hidden">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-4">
+                <h3 class="text-xl font-bold text-dark mb-2">Calzone Vegetariano</h3>
+                <p class="text-gray-600 text-sm mb-4">Masa artesanal rellena de queso mozzarella, champiñones frescos, cebolla, pimientos y salsa de tomate.</p>
+                <div class="text-primary font-bold text-xl mb-4">S/ 27.90</div>
+
+                <h4 class="font-bold text-dark text-sm uppercase tracking-wide mb-3 border-t border-gray-100 pt-4">Aceitunas (Opcional)</h4>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                        <input type="radio" name="veg-aceitunas" value="Ninguna" class="text-primary focus:ring-primary h-4 w-4" checked>
+                        <span class="text-gray-700 text-sm font-medium">Ninguna</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                        <input type="radio" name="veg-aceitunas" value="Negras" class="text-primary focus:ring-primary h-4 w-4">
+                        <span class="text-gray-700 text-sm font-medium">Negras</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                        <input type="radio" name="veg-aceitunas" value="Verdes" class="text-primary focus:ring-primary h-4 w-4">
+                        <span class="text-gray-700 text-sm font-medium">Verdes</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition">
+                        <input type="radio" name="veg-aceitunas" value="Mixtas" class="text-primary focus:ring-primary h-4 w-4">
+                        <span class="text-gray-700 text-sm font-medium">Mixtas</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="calzone-content-amigusto" class="calzone-content hidden">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-4">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="text-xl font-bold text-dark">Calzone A Mi Gusto</h3>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Base de queso mozzarella y salsa de tomate. Elige hasta 6 ingredientes.</p>
+                <div class="text-primary font-bold text-xl mb-4">S/ 32.90</div>
+
+                <h4 class="font-bold text-dark text-sm uppercase tracking-wide mb-3 border-t border-gray-100 pt-4 flex justify-between items-center sticky top-20 bg-white z-10 py-2">
+                    <span>Ingredientes</span>
+                    <span id="amg-counter" class="text-xs text-white bg-dark rounded px-2 py-1 font-bold">0/6</span>
+                </h4>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" id="amg-ingredients-grid">
+                    <!-- Ingredients will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Summary & Cart Footer for Calzone -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-[0_-10px_20px_rgba(0,0,0,0.1)] z-40 sm:relative sm:shadow-none sm:bg-transparent sm:border-none sm:p-0 sm:max-w-3xl sm:mx-auto sm:px-6 mt-4 hidden" id="calzone-sticky-footer">
+        <div class="sm:bg-white sm:rounded-xl sm:shadow-sm sm:border sm:border-gray-100 sm:p-5 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="w-full sm:w-auto">
+                <div class="text-xs text-gray-500 font-medium mb-1 uppercase tracking-wider">Resumen</div>
+                <div id="calzone-summary-title" class="font-bold text-dark text-sm sm:text-base leading-tight">Calzone Tradicional</div>
+                <div id="calzone-summary-details" class="text-xs text-gray-500 font-medium mt-1 truncate max-w-[250px] sm:max-w-[400px]">Clásico</div>
+            </div>
+            <div class="flex items-center w-full sm:w-auto gap-4">
+                <div class="text-xl font-bold text-primary whitespace-nowrap" id="calzone-summary-price">S/ 25.90</div>
+                <button id="add-calzone-btn" class="w-full sm:w-auto bg-primary text-white font-bold py-3 px-6 rounded-lg shadow-sm hover:bg-red-700 transition flex justify-center items-center gap-2">
+                    <i class="fas fa-plus"></i> Añadir
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
 </main><footer class="bg-darker text-white pt-12 pb-6 border-t border-gray-800">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
