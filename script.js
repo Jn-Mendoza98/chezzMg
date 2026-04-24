@@ -359,12 +359,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkboxes = grid.querySelectorAll('.amg-ing-checkbox');
         const counter = document.getElementById('amg-counter');
 
+        counter.textContent = `0/${MAX_AMG_INGREDIENTS} seleccionados`;
+
         checkboxes.forEach(cb => {
             cb.addEventListener('change', (e) => {
                 if (e.target.checked) {
                     if (selectedAmgIngredients.length >= MAX_AMG_INGREDIENTS) {
                         e.target.checked = false;
-                        alert('Máximo 6 ingredientes permitidos.');
+                        alert('Máximo 6 ingredientes');
                         return;
                     }
                     selectedAmgIngredients.push(e.target.value);
@@ -372,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     selectedAmgIngredients = selectedAmgIngredients.filter(ing => ing !== e.target.value);
                 }
 
-                counter.textContent = `${selectedAmgIngredients.length}/${MAX_AMG_INGREDIENTS}`;
+                counter.textContent = `${selectedAmgIngredients.length}/${MAX_AMG_INGREDIENTS} seleccionados`;
 
                 // Visual feedback for max reached
                 if (selectedAmgIngredients.length >= MAX_AMG_INGREDIENTS) {
@@ -424,14 +426,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show/hide footer
         calzoneStickyFooter.classList.remove('hidden');
 
-        // Disable/Enable Add button
-        if (isValid) {
-            addCalzoneBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-            addCalzoneBtn.disabled = false;
-        } else {
-            addCalzoneBtn.classList.add('opacity-50', 'cursor-not-allowed');
-            addCalzoneBtn.disabled = true;
-        }
+        // Always enable Add button so it can trigger alerts
+        addCalzoneBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        addCalzoneBtn.disabled = false;
     }
 
     // Tab Switching Logic
@@ -472,6 +469,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add Calzone to Cart
     if (addCalzoneBtn) {
         addCalzoneBtn.addEventListener('click', () => {
+            if (currentCalzoneType === 'amigusto' && selectedAmgIngredients.length === 0) {
+                alert('Debes elegir al menos 1 ingrediente');
+                return;
+            }
+
             const title = summaryTitle.textContent;
             const details = summaryDetails.textContent;
             const price = parseFloat(summaryPrice.textContent.replace('S/ ', ''));
