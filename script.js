@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const mensajeCodificado = encodeURIComponent(mensaje);
 
                 // Número de WhatsApp (ejemplo genérico de Perú)
-                const numeroWhatsApp = "51999999999";
+                const numeroWhatsApp = "51917142975";
                 const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensajeCodificado}`;
 
                 // Abrir WhatsApp en una nueva pestaña
