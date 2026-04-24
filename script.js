@@ -359,7 +359,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkboxes = grid.querySelectorAll('.amg-ing-checkbox');
         const counter = document.getElementById('amg-counter');
 
-        counter.textContent = `0/${MAX_AMG_INGREDIENTS} seleccionados`;
+        counter.textContent = `0/${MAX_AMG_INGREDIENTS}`;
 
         checkboxes.forEach(cb => {
             cb.addEventListener('change', (e) => {
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     selectedAmgIngredients = selectedAmgIngredients.filter(ing => ing !== e.target.value);
                 }
 
-                counter.textContent = `${selectedAmgIngredients.length}/${MAX_AMG_INGREDIENTS} seleccionados`;
+                counter.textContent = `${selectedAmgIngredients.length}/${MAX_AMG_INGREDIENTS}`;
 
                 // Visual feedback for max reached
                 if (selectedAmgIngredients.length >= MAX_AMG_INGREDIENTS) {
@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (addCalzoneBtn) {
         addCalzoneBtn.addEventListener('click', () => {
             if (currentCalzoneType === 'amigusto' && selectedAmgIngredients.length === 0) {
-                alert('Debes elegir al menos 1 ingrediente');
+                alert('Elige al menos 1 ingrediente');
                 return;
             }
 
@@ -493,7 +493,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             saveCart();
-            updateCartCounter(true);
+
+            // Fire animation
+            const calzoneImg = document.getElementById('calzone-main-img');
+            if (calzoneImg) {
+                animateFlyingImage(calzoneImg);
+                setTimeout(() => {
+                    updateCartCounter(true);
+                }, 500);
+            } else {
+                updateCartCounter(true);
+            }
 
             // Visual feedback on button
             const originalText = addCalzoneBtn.innerHTML;
